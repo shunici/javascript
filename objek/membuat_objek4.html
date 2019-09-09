@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+       
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belajar Javascript</title>
+    <style>html {background-color: grey;}  	
+    </style>   
+</head>
+<body>
+  <a href="https://www.petanikode.com/javascript-objek/" title=""> link penjelasan</a>
+<h1>membuat class objek dengan this</h1>
+
+      
+<script>
+  var id_card = {
+    uk_panjang: 9,
+    uk_lebar : 5,
+      tampilkan : function(){
+       return this.uk_panjang+' dan '+this.uk_lebar;
+      }
+  }
+  a = id_card.tampilkan();
+  alert(`ukuran id card adalah ${a}`);
+//===========================================
+   var mug = {
+    uk_panjang: 20,
+    uk_lebar : 8,
+      tampilkan : function(){
+       return this.uk_panjang+' dan '+this.uk_lebar;
+      }
+  }
+  b = mug.tampilkan();
+  alert(`ukuran mug adalah ${b}`);
+
+  
+//===metode berbeda===dengan class dan this==sama dengan cth diatas namaun ini lebih efektif======
+function ukuran (panjang, lebar){
+  this.panjang = panjang;
+  this.lebar = lebar;
+    this.gabung = function(){
+      alert(`${this.panjang} ${this.lebar}`);
+    };    
+};
+a = new ukuran(' ini ukuran a1 60', 'x85').gabung();
+b = new ukuran(' ini ukuran ganci 7', 'x7').gabung();
+c = new ukuran(' ini ukuran a3 48', 'x32').gabung();
+d = new ukuran(' ini ukuran a4 29', 'x21').gabung();
+ 
+
+
+</script>
+
+</body>
+</html>
+
