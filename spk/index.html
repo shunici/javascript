@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>print</title>
+</head>
+
+<body class="text-center">
+    <div class="noprint">
+        <button class="text-center">
+            <h3>print</h3>
+        </button>
+
+    </div>
+
+
+    <page size="A4" layout="potrait">
+        <div class="a">
+            <p class="waktu"></p>
+            <table style="border: solid black 1px;">
+                <thead>
+                    <tr>
+                        <th>Nama File</th>
+                        <th>Ukuran</th>
+                        <th>bahan</th>
+                        <th>qty</th>
+                        <th>keterangan</th>
+                        <th>Nama Pemesan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="nama_file" style="width: 150px;"></td>
+                        <td>Smith</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Telp</td>
+                        <td>Ttd Kostumer</td>
+                        <td>Ttd Desainer</td>
+                        <td>Ttd Admin</td>
+                        <td>Ttd Operator</td>
+                        <td>Ttd Finishing</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 60px;"></td>
+                        <td style="height: 60px;"></td>
+                        <td style="height: 60px;"></td>
+                        <td style="height: 60px;"></td>
+                        <td style="height: 60px;"></td>
+                        <td style="height: 60px;"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="conten">
+
+            <div class="uploader" onclick="$('#filePhoto').click()">
+
+                <img src="" />
+                <input type="file" name="userprofile_picture" id="filePhoto" />
+            </div>
+
+        </div>
+    </page>
+</body>
+<script src="waktu.js"></script>
+<script>
+    $(document).ready(function () {
+        $('button').click(function () {
+            window.print();
+        })
+    })
+
+
+
+    var imageLoader = document.getElementById('filePhoto');
+    imageLoader.addEventListener('change', handleImage, false);
+
+    function handleImage(e) {
+        var reader = new FileReader();
+        reader.onload = function (event) {
+
+            $('.uploader img').attr('src', event.target.result);
+
+        }
+        var fileName = e.target.files[0].name;
+        $('.nama_file').text(fileName);
+        reader.readAsDataURL(e.target.files[0]);
+
+    }
+</script>
+
+</html>
