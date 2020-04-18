@@ -7,7 +7,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <title>print</title>
@@ -15,35 +17,39 @@
 
 <body class="text-center">
     <div class="noprint">
-        <button class="text-center">
-            <h3>print</h3>
+        <button type="button" id="print" class="btn btn-warning btn-lg">
+         Print
         </button>
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Form isi</button>
+        
 
     </div>
 
 
     <page size="A4" layout="potrait">
         <div class="a">
-            <p class="waktu"></p>
+            <br>
+            <br>
+           <div style="float: left; font-size: 30px"><b>SPK</b> Cetak</div> <div  class="waktu"></div>
             <table style="border: solid black 1px;">
                 <thead>
                     <tr>
-                        <th>Nama File</th>
+                        <th style="width: 100px;">Nama File</th>
                         <th>Ukuran</th>
-                        <th>bahan</th>
-                        <th>qty</th>
-                        <th>keterangan</th>
-                        <th>Nama Pemesan</th>
+                        <th>Bahan</th>
+                        <th style="width: 30px;">qty</th>
+                        <th style="width: 35px;">Ket</th>
+                        <th>Pemesan</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="nama_file" style="width: 150px;"></td>
-                        <td>Smith</td>
-                        <td>50</td>
-                        <td>50</td>
-                        <td>50</td>
-                        <td>50</td>
+                        <td class="nama_file" ></td>
+                        <td class="ukuran"></td>
+                        <td class="bahan"></td>
+                        <td class="qty"></td>
+                        <td class="ket"></td>
+                        <td class="kostumer"></td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -58,7 +64,7 @@
                     <tr>
                         <td style="height: 60px;"></td>
                         <td style="height: 60px;"></td>
-                        <td style="height: 60px;"></td>
+                        <td style="height: 60px;">shuni</td>
                         <td style="height: 60px;"></td>
                         <td style="height: 60px;"></td>
                         <td style="height: 60px;"></td>
@@ -66,7 +72,8 @@
                 </tfoot>
             </table>
         </div>
-
+        <br>
+        <p class="nama_file"></p>
         <div class="conten">
 
             <div class="uploader" onclick="$('#filePhoto').click()">
@@ -77,16 +84,46 @@
 
         </div>
     </page>
+  <!-- buka Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Form Keterangan SPK</h4>
+        </div>
+        <div class="modal-body">
+            <!-- mulai isi -->
+        
+               <div class="form-group">            
+               <input type="text" id="ukuran" placeholder="isi ukuran">
+           </div>
+         <div class="form-group"><input type="text" id="bahan" placeholder="isi bahan"> </div>
+         <div class="form-group"><input type="text" id="qty" placeholder="jumlah"> </div>
+         <div class="form-group"><input type="text" id="ket" placeholder="ket"> </div>
+         <div class="form-group">  <input type="text" id="kostumer" placeholder="nama kostumer"></div> 
+       
+          <!-- end isi -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           <button  class="btn btn-warning pull-left" data-dismiss="modal"  id="proses">proses</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<!-- tutup modal -->
 </body>
 <script src="waktu.js"></script>
 <script>
-    $(document).ready(function () {
-        $('button').click(function () {
+$(document).ready(function () {
+        $('#print').click(function () {
             window.print();
         })
     })
-
-
 
     var imageLoader = document.getElementById('filePhoto');
     imageLoader.addEventListener('change', handleImage, false);
@@ -100,9 +137,28 @@
         }
         var fileName = e.target.files[0].name;
         $('.nama_file').text(fileName);
-        reader.readAsDataURL(e.target.files[0]);
+        reader.readAsDataURL(e.target.files[0]);  
+}
 
-    }
+$(document).ready(function(){
+       $('#proses').click(function(){
+            var ukuran = $('#ukuran').val();
+            var bahan = $('#bahan').val();
+            var qty = $('#qty').val();
+            var ket = $('#ket').val();
+             var kostumer = $('#kostumer').val();
+            
+            // isikan
+            $('.ukuran').text(ukuran);
+            $('.bahan').text(bahan);
+            $('.qty').text(qty);
+            $('.ket').text(ket);
+            $('.kostumer').text(kostumer);
+
+        })
+})
+
+
 </script>
 
 </html>
