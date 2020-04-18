@@ -27,11 +27,11 @@ page[size="A4"][layout="potrait"] {
     }
 }
 
-p {
+/*p {
     text-align: center;
     padding-top: 40px;
 
-}
+}*/
 
 @media print {
     .noprint {
@@ -45,17 +45,18 @@ p {
     position: relative;
     float: left;
     width: 14.8cm;
-    top: -180px;
+    top: -230px;
     height: 20cm;
     /* background: red; */
     border: 2px dashed #e8e8e8;
 }
 
 #filePhoto {
-    position: absolute;
+    position: absolute;    
+ 
     width: 14.8cm;
     height: 16cm;
-    top: -10px;
+    top: -5px;
     left: 5px;
     z-index: 2;
     opacity: 0;
@@ -93,7 +94,7 @@ html {
 
 body {
     border: solid 1px blue;
-    margin: 10mm 15mm 10mm 15mm;
+   /* margin: 10mm 15mm 10mm 15mm;*/
     /* margin you want for the content */
 }
 
@@ -103,8 +104,8 @@ div.a {
 
     float: right;
     transform: rotate(90deg);
-    top: 240px;
-    left: 150px;
+    top:120px;
+    left: 130px;
 }
 
 th,
