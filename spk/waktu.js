@@ -67,8 +67,8 @@ switch (bulan) {
         bulan = "Desember";
         break;
 }
-var tampilTanggal = "Tanggal: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
-var tampilWaktu = "Jam: " + jam + ":" + menit + ":" + detik;
+var tampilTanggal = "Hari " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilWaktu = "Jam: " + jam + ":" + menit;
+// var tampilWaktu = "Jam: " + jam + ":" + menit + ":" + detik;
 
-
-$('.waktu').text(tampilTanggal);
+$('.waktu').text(tampilTanggal +" " + tampilWaktu);
