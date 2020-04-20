@@ -1,0 +1,127 @@
+body {
+    background: rgb(204, 204, 204);
+}
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+page[size="A4"][layout="potrait"] {
+    width: 21cm;
+    height: 29.7cm;
+
+}
+
+@media print {
+
+    page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
+
+/*p {
+    text-align: center;
+    padding-top: 40px;
+
+}*/
+
+@media print {
+    .noprint {
+        display: none;
+    }
+}
+
+
+
+.uploader {
+    position: relative;
+    float: left;
+    width: 14cm;
+   
+    height: 15cm;
+    /* background: red; */
+    border: 2px dashed #e8e8e8;
+}
+
+#filePhoto {
+    position: absolute;    
+ float: left;
+   width: 60%;
+    height: 16cm;
+    top: -5px;
+    left: 5px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.uploader img {
+    position: absolute;
+    width: 80%;
+    height: auto;
+ float: left;
+    top: -1px;
+    left: 15px;
+    z-index: 1;
+    border: none;
+}
+
+
+
+@page {
+    size: auto;
+    /* auto is the initial value */
+    margin: 0mm;
+    /* this affects the margin in the printer settings */
+}
+
+html {
+    background-color: #FFFFFF;
+    margin: 0px;
+    /* this affects the margin on the html before sending to printer */
+}
+
+body {
+    border: solid 1px blue;
+   /* margin: 10mm 15mm 10mm 15mm;*/
+    /* margin you want for the content */
+}
+
+.spk {
+
+    position: relative;
+
+    float: right;
+    transform: rotate(90deg);
+    top:-420px;
+    left: 100px;
+    /*background-color: yellow;*/
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 3px;
+}
+
+.panjang    {
+  position: relative;
+  left: -190px;
+}
+
+.lebar    {
+    z-index: 50;
+   
+    transform: rotate(90deg);
+    position: relative;
+    left: 60px;
+    top: -150px;
+}
