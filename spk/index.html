@@ -147,21 +147,19 @@ $(document).ready(function () {
             window.print();
         })
     })
+ var imageLoader = document.getElementById('filePhoto');
+  imageLoader.addEventListener('change', tangani_foto, false);
 
-    var imageLoader = document.getElementById('filePhoto');
-    imageLoader.addEventListener('change', handleImage, false);
+  function tangani_foto(e) {
+    var baca_file = new FileReader();
+    var nama_foto = e.target.files[0].name;
+    baca_file.onload = function (event) {
+      $('.uploader img').attr('src', event.target.result);
+    }
 
-    function handleImage(e) {
-        var reader = new FileReader();
-        reader.onload = function (event) {
-
-            $('.uploader img').attr('src', event.target.result);
-
-        }
-        var fileName = e.target.files[0].name;
-        $('.nama_file').text(fileName);
-        reader.readAsDataURL(e.target.files[0]);  
-}
+    $('.nama_file').text(nama_foto);
+    baca_file.readAsDataURL(e.target.files[0]);
+  }
 
 //buat form
 $(document).ready(function(){
