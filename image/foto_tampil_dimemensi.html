@@ -1,0 +1,24 @@
+  <body>
+<div class="photo">
+  tampilkan dimensi foto jpg png
+    <div>Photo (max 240x240 and 100 kb):</div>
+    <input type="file" name="photo" id="file"/>
+</div>
+
+<script type="text/javascript">
+var _URL = window.URL || window.webkitURL;
+$("#file").change(function (e) {
+    var file, img;
+    if ((file = this.files[0])) {
+        img = new Image();
+        var objectUrl = _URL.createObjectURL(file);
+        img.onload = function () {
+            alert(this.width + " " + this.height);
+            _URL.revokeObjectURL(objectUrl);
+        };
+        img.src = objectUrl;
+    }
+});
+
+</script>
+  </body>
