@@ -21,6 +21,9 @@
       Print
     </button>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Form isi</button>
+    <button type="button" id="refresh" class="btn btn-default btn-lg">
+      Refresh
+    </button>
 
 
   </div>
@@ -56,7 +59,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="nama_file"></td>
+            <td class="nama_file" id="text"></td>
             <td class="ukuran"></td>
             <td class="bahan"></td>
             <td class="qty"></td>
@@ -166,8 +169,11 @@
       if (FileReader && files && files.length) {
         var fr = new FileReader();
         var extension = files[0].name.split('.').pop().toLowerCase();
-        var nama_foto = files[0].name;
+
+        var nama_foto = files[0].name.split('tif');
         $('.nama_file').text(nama_foto);
+        // var uk_panjang_file = files[0].name;
+        // alert(uk_panjang_file);
 
         fr.onload = function (e) {
           success = fileTypes.indexOf(extension) > -1;
@@ -181,13 +187,15 @@
             var tiff = new Tiff({
               buffer: e.target.result
             });
+
             var tiffCanvas = tiff.toCanvas();
             $(tiffCanvas).css({
               "max-width": "400px",
               "width": "100%",
               "height": "auto",
               "display": "block",
-              "padding-top": "10px"
+              "padding-top": "10px",
+              "padding-left": "10px"
             }).addClass("preview");
             $(parentEl).append(tiffCanvas);
           }
@@ -241,6 +249,9 @@
   $('#print').click(function () {
     window.print();
   })
+  $('#refresh').click(function () {
+    window.location.href.substr(0, window.location.href.indexOf('#'));
+  });
 </script>
 
 </html>
