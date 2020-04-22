@@ -2,3 +2,8 @@ https://zocada.com/compress-resize-images-javascript-browser/
 
 crop image dan sedikit penjelasan
 https://github.com/blueimp/JavaScript-Load-Image#user-content-meta-data-parsing
+
+permasalahan
+membuat program untuk mendeteksi ukuran mm atau cm pada image sangatlah sulit dikarenakan image dibangun berdasarkan pixel. walaupun misal ketika kita membuat ukuran yang sama tapi resollusinya berbeda maka hasilpun berbeda..oleh karena itu diperlukan sistem mengubah dpi resolusi image ketika foto akan dicek ukurannya....hal ini yang membuat program saya lama sekali utk mencari tahu penyebabnya..
+mungkin situs2 ini bisa membantu
+https://jsfiddle.net/bsorrentino/s8c51jvt/
