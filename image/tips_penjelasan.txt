@@ -1,3 +1,6 @@
+tampil image
+http://jsfiddle.net/dwebexperts/KTyA4/1/
+
 https://zocada.com/compress-resize-images-javascript-browser/
 
 crop image dan sedikit penjelasan
