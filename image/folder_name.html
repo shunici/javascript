@@ -23,3 +23,31 @@ $('#i_file').change( function(event) {
 
     </script>
 </html>
+
+dibawah ini untuk mengambil sebelum nama folder sebelum slash
+<html>
+  <head>
+    <script src='http://code.jquery.com/jquery-1.5.1.min.js'></script>
+  </head>
+  
+  <body>
+<input type="file" id="i_file" value="" webkitdirectory> 
+
+<br>
+<img src="" width="200" style="display:none;" />
+<br>
+<div id="disp_tmp_path"></div>
+   
+  </body>
+
+  <script>
+$('#i_file').change( function(event) {
+    var tes = event.target.files[0].webkitRelativePath;
+ 	var hasil = tes.split('/').slice(0, -1).join('/') + '';
+   alert(hasil);
+
+  
+});
+
+    </script>
+</html>
