@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src='http://code.jquery.com/jquery-1.5.1.min.js'></script>
+    <title>radio</title>
+  </head>
+  
+  <body>
+<h2>selected radio value dengan jquery</h2>
+
+       <p> 
+        <label><input type="radio" name="gender" value="laki-laki">Laki-laki</label> 
+        <label><input type="radio" name="gender" value="wanita">Wanita</label>
+    </p>
+    <p><input type="button" value="Get Value"></p>
+  </body>
+
+  <script>
+
+    $(document).ready(function(){
+        $("input[type='button']").click(function(){
+            var radioValue = $("input[name='gender']:checked").val();
+            if(radioValue){
+                alert("Your are a - " + radioValue);
+            }
+        });
+
+    });
+    </script>
+</html>
