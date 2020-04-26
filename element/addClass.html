@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ 
+
+$('.radio').click(function(){
+  $('.red').removeClass('red');
+  $(this).addClass('red');
+});
+
+});
+</script>
+<style>
+.red{
+background-color: red; 
+}
+</style>
+</head>
+<body>
+
+<div class="radio">Text1</div>
+<div class="radio">Text2</div>
+<div class="radio">Text3</div>
+<div class="radio">Text4</div>
+
+</body>
+</html>
