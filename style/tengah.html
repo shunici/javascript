@@ -1,0 +1,43 @@
+https://levelup.gitconnected.com/10-ways-to-center-a-div-horizontally-and-vertically-in-css-53ca5eb912db
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>center</title>
+</head>
+<style>
+    body {
+        padding: 30px;
+    }
+
+    .kotak-luar {
+        background-color: blanchedalmond;
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
+
+    .kotak-dalam {
+        background-color: brown;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<body>
+    <h2>tengah</h2>
+    <div class="kotak-luar">
+        <div class="kotak-dalam">
+
+        </div>
+    </div>
+</body>
+
+</html>
