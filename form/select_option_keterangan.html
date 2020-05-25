@@ -1,0 +1,22 @@
+https://stackoverflow.com/questions/2864238/line-break-in-html-select-option
+
+<select name="select1" id="select1" onchange="SelectFirst(this.value)">
+  <option value="1" title="this is my long title for the yes option">Yes</option>
+  <option value="2">No</option>
+  <option value="2,1" style="background:#eeeeee">&nbsp;&nbsp;&nbsp;This is my description for the no option</option>
+  <option value="2,2" style="background:#eeeeee">&nbsp;&nbsp;&nbsp;This is line 2 for the no option</option>
+  <option value="3">Maybe</option>
+  <option value="3,1" style="background:#eeeeee">&nbsp;&nbsp;&nbsp;This is my description for Maybe option</option>
+  <option value="3,2" style="background:#eeeeee">&nbsp;&nbsp;&nbsp;This is line 2 for the Maybe option</option>
+  <option value="3,3" style="background:#eeeeee">&nbsp;&nbsp;&nbsp;This is line 3 for the Maybe option</option>
+</select>
+
+<script>
+ function SelectFirst(SelVal) {
+   var arrSelVal = SelVal.split(",")
+   if (arrSelVal.length > 1) {
+     Valuetoselect = arrSelVal[0];
+     document.getElementById("select1").value = Valuetoselect;
+   }
+ }
+</script>
