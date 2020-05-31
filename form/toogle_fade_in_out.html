@@ -1,0 +1,24 @@
+https://codepen.io/shuni/pen/RwWXmzO
+
+  <div class="form-group dp" >
+    <label for="dp">Uang Muka</label>
+    <input type="text" class="form-control" id="dp_">
+  </div>
+
+  <div class="col-md-6" style="margin-left: -15px">
+      <button id="dp" class="btn btn-info pull-left" >Uang Muka</button>
+  </div>
+
+
+  <script>
+  $(document).ready(function(){
+    $('#dp').click(function(e){
+        e.preventDefault();
+        $("#dp_").val('');
+        $(".dp").fadeToggle();      
+    })    
+  })
+  </script>
+  
+  fade in dan fade out digunakan saat berada di form ketika kita ingin menampilkan dan menyembunyikan sesuatu
+  
