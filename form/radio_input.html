@@ -1,0 +1,22 @@
+jika text sama radio checked
+ <div class="form-group ">
+                                <p><b>Status Pelanggan</b></p>
+                               <label class="radio-inline">
+                                 <input type="radio" name="status_pelanggan" id="Umum" value="Umum">Umum
+                               </label>
+                               <label class="radio-inline">
+                                 <input type="radio" name="status_pelanggan" id="Percetakan" value="Percetakan">Percetakan
+                               </label> 
+                               <label class="radio-inline">
+                                 <input type="radio" name="status_pelanggan" id="Lainnya" value="Lainnya">lainnya
+                               </label>                                
+                              </div>
+                              
+                  <script>
+                    $(document).ready(function(){
+      var status_plg ="Percetakan";
+       if (status_plg == 'Percetakan'){
+             document.getElementById("Percetakan").checked = true;
+       } 
+  })
+                  </script>
