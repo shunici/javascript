@@ -5,11 +5,14 @@ https://codepen.io/shuni/pen/NWxPNmm
 <input type="number">
 <button id='proses'>proses</button>
 
-$('#proses').click(function(){
+<script>
+  $('#proses').click(function(){
   
-var angka = $('input').val();
+  var angka = $('input').val();
 
   var tampil = parseInt(angka).toLocaleString();
   $('h1').text(tampil)
   
 });
+
+</script>
