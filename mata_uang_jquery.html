@@ -1,0 +1,15 @@
+https://codepen.io/shuni/pen/NWxPNmm
+
+<h1></h1>
+<br>
+<input type="number">
+<button id='proses'>proses</button>
+
+$('#proses').click(function(){
+  
+var angka = $('input').val();
+
+  var tampil = parseInt(angka).toLocaleString();
+  $('h1').text(tampil)
+  
+});
