@@ -1,0 +1,54 @@
+
+
+
+
+
+<div class="col-md-6">
+     
+     <div class="form-group">
+       <label for="total_bayar">Total Bayar</label>
+       <input type="text" class="form-control" id="total_lunas" name="total_lunas">
+     </div>
+     
+     <div class="form-group dp" style="display: none" >
+       <label for="dp">Uang Muka</label>
+       <input type="text" class="form-control" id="dp_">
+     </div>   
+     <div class="form-group ">
+        <p><b>Status Pembayaran</b></p>
+        <label class="radio-inline">
+          <input id="dp" type="radio" value="dp" name="status_pembayaran" >DP / Uang Muka
+        </label>
+        <label class="radio-inline">
+          <input id="lunas" type="radio" value="lunas" name="status_pembayaran">Lunas
+        </label>                                                        
+    </div>
+</div>
+
+
+<script>
+
+
+ $('#dp').click(function(e){
+            e.preventDefault();                   
+            $(".dp").css('display', '');
+            $('#dp_').val('');
+            //ubah nama id jadi dp
+            $('#total_lunas').attr("name","total_dp");
+            $('#total_lunas').attr("id","total_dp");
+           
+        })
+  $('#lunas').click(function(e){
+            e.preventDefault();            
+            $(".dp").css('display', 'none').val('');  
+            $('#dp_').val(''); 
+            $('#total_dp').attr("name","total_lunas");       
+            $('#total_dp').attr("id","total_lunas");
+               
+        })
+
+
+
+
+</script>
+mengubah atribut nama dan id 
