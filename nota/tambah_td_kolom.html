@@ -1,0 +1,21 @@
+http://jsfiddle.net/RzDCp/
+
+<table>
+    <tr>
+        <td class="sum">3</td>
+    </tr>
+    <tr>
+        <td class="sum">1</td>
+    </tr>
+    <tr>
+        <td class="sum">1</td>
+    </tr>
+</table>
+
+$(document).ready(function(){
+    var sum = 0
+    $(".sum").each(function(){
+        sum += parseFloat($(this).text());
+    });
+    alert(sum);
+});
