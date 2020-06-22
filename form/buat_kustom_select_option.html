@@ -1,0 +1,29 @@
+ <div class="form-group">
+    <label>Satuan</label>
+    <select id="jabatan1" class="form-control" name="jabatan" style="height: 35px"
+    onchange="if(this.options[this.selectedIndex].value=='lainnya'){toggleField(this,this.nextSibling); this.selectedIndex='0';}">
+        <option value="Desainer">Desainer</option>
+        <option value="Operator">Operator</option>
+        <option value="Helper">Helper</option>                                                            
+        <option value="lainnya">[Lain-lain]</option>    
+    </select><input id="jabatan2" name="jabatan" class="form-control" style="display:none"
+      disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}">
+  </div>
+  
+  <script>
+     //kustom select option
+
+     function toggleField(hideObj,showObj){
+      hideObj.disabled=true;		
+      hideObj.style.display='none';
+      showObj.disabled=false;	                   
+      showObj.style.display='inline';
+      showObj.focus();
+      }
+
+  
+  </script>
+  
+  membuat kustom select option
+  ini digunakan saat user memilih option select yang sudah ada atau yang baru.
+  perlu diingat type data untuk melakukan ini harus string jangan berelasi dengan tabel lain
