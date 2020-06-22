@@ -1,0 +1,43 @@
+harus pake jquery dulu yaa shunii
+
+<div class="form-group">
+  <label for="target">Target</label>
+  <input type="string" class="form-control" id="target" name="target" placeholder="Masukkan Target Bonus">
+</div>
+
+<script>
+  // penulisan uang
+    $('#target').on("keyup", function() {
+        var x =0;
+        x = hapus_koma(this.value);
+        this.value = tambah_koma(x);
+    });
+//fungsinya
+function tambah_koma(nStr) {
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
+
+function hapus_koma(value) {
+    value = value.replace(/\,/g, '');
+    value = parseInt(value, 10);
+    return value;
+    
+    
+    =====================
+ // dan dibawah ini untuk mengembalikan nilai
+ 
+  var uang = $('#target').val();
+var tes = uang.replace(/,/g, ''); 
+alert(tes);
+
+
+
+</script>
