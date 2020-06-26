@@ -1,0 +1,12 @@
+
+  ketika diklik input jadi disabled
+  
+  <input type="text" class="form-control" id="nominal" name="nominal" placeholder="Masukkan Nominal Gajih">
+
+<script>
+   $(document).on('click', '#edit_btn', function(e){
+   e.preventDefault();
+   $("input").prop('disabled', true);
+ 
+  })
+ </script>
