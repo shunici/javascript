@@ -1,0 +1,28 @@
+https://www.geeksforgeeks.org/how-to-scroll-automatically-to-the-bottom-of-the-page-using-jquery/
+overflow kebawah ketika refresh
+
+<style>
+    #desainer {                                 
+            width: 100%;
+            height: 400;
+            overflow: auto;
+        } 
+
+</style>
+
+
+<div id='desainer'>
+text nya harus banyak disini
+</div>
+
+
+<script>
+  $(document).ready(function(){
+              $("#desainer, body").animate({ 
+                    scrollTop: $( 
+                      '#desainer, body').get(0).scrollHeight 
+                }, 0); 
+                
+            });
+            
+            </script>
