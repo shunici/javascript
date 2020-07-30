@@ -57,3 +57,19 @@ console(this);
     alert('hy suni');
 }
 new Halo();
+
+//contoh lain penggunaan objek
+
+function angkot (supir, penumpang){
+    this.supir = supir;
+    this.penumpang = penumpang;
+
+    this.naik = function(nama_penumpang){
+        this.penumpang.push(nama_penumpang);
+        return this.penumpang;
+    }
+    
+}
+
+var tes = new angkot('rosida',[]);
+//di console ketik tes.naik('shuni');
