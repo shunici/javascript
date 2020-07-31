@@ -34,3 +34,4 @@ function mahasiswa (nama, energi){
  }
 
 var shuni = new mahasiswa('shuni', 1);
+//cara pakai di console log shuni.makan(2) enter
