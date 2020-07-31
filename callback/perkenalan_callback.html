@@ -1,0 +1,16 @@
+//callback
+//synchronus callback
+
+
+function halo (nama){
+    alert(`haloo, ${nama}`);
+}
+
+function tampilkan(bebas){
+    const nama = prompt('masukkan nama : ');
+    bebas(nama);
+}
+
+tampilkan(halo);
+//fungsi tanpa kurung spya tidak langsung dieksekusi biarkan user isi nama dulu
+
