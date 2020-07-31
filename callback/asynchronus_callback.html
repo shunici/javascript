@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>belajar callback</title>
+    <style>
+    body {
+        background-color: grey;
+
+    }
+    
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>membuat callback dengan jquery ajax untuk kemudian diambil dari json</h1>
+  
+
+
+</body>
+
+</html>
+
+//dibawah ini script jangan lupa bikin mahasiswa.json
+
+<script>
+//callback
+//synchronus callback
+
+// var mahasiswa = [
+//     {
+//         nama : 'shuni',
+//         hobi : 'mancing',
+//         nilai : 2
+//     },
+//     {
+//         nama : 'sodri',
+//         hobi : 'gaming',
+//         nilai : 1
+//     },
+//     {
+//         nama : 'dodi',
+//         hobi : 'bola',
+//         nilai : 3
+//     },
+//     {
+//         nama : 'rossi',
+//         hobi : 'bulutangkis',
+//         nilai : 2
+//     }
+// ]
+// console.log('mulai');
+// mahasiswa.forEach(m => { console.log(m.nama) } );
+// console.log('akhir');
+
+// simulasi callback  
+//asynchronus callback dengan ajax
+//buat file array objek atau json secara terpisah dari file ini misal mahasiswa.json kemudian isi dengan array objek dibawah
+//tapi harus diingat semua file ini harus di htdocks//jika tidak ingin memindah bisa install plugin liveserver
+
+// [
+//     {
+//         "nama" : "shuni",
+//         "hobi" : "mancing",
+//         "nilai" : 1
+//     },
+//      {
+//         "nama" : "hadi",
+//         "hobi" : "bola",
+//         "nilai" : 1
+//     },
+//      {
+//         "nama" : "arapik",
+//         "hobi" : "gaming",
+//         "nilai" : 1
+//     }
+
+// ]
+
+//mengambil data json dengan jquery
+//harus ingat mengaksesnya dari htdoc di url jadi localhost.....
+
+
+console.log('mulai');
+
+$.ajax({
+    url : 'mahasiswa.json',
+    success : (hasil) => {
+        alert('berhasil');
+        hasil.forEach ( h => console.log(h.nama) );
+    },
+    error : () => {
+
+    }
+});
+
+console.log('akhir');
+
+</script>
