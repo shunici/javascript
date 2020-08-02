@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mencari tahu nama folder upload</title>
+    <style>
+    body {
+        background-color: grey;
+
+    }
+    
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+</head>
+
+<body>
+    <input type="file" id="filepicker" name="fileList" webkitdirectory multiple />
+    <ul id="listing"></ul>
+  
+<script>
+document.getElementById("filepicker").addEventListener("change", function(event) {
+  let output = document.getElementById("listing");
+  let files = event.target.files;
+
+  for (let i=0; i<1; i++) {
+    let item = document.createElement("li");
+  var tes =  item.innerHTML = files[i].webkitRelativePath;
+   var a = tes.split('/').slice(0, -1).join('/') + '';
+   alert(a);
+    output.appendChild(item);
+  };
+}, false);
+</script>
+
+</body>
+
+</html>
