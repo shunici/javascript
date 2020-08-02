@@ -49,3 +49,50 @@ holder.ondrop = function (e) {
 </body>
 
 </html>
+atau ////////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mencari tahu nama folder upload</title>
+    <style>
+   #holder.hover { border: 10px dashed #0c0 !important; }
+    
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+</head>
+
+<body>
+    <a href="https://stackoverflow.com/questions/8006715/drag-drop-files-into-standard-html-file-input">sumber</a>
+    <form method="post" action="http://example.com/">
+        <input style="display: none;" type="file">
+        <input id="fileDragName">     
+        <div id="holder" style="width:200px; height:200px; border: 10px dashed #ccc"></div>
+      </form>
+  
+<script>
+function readfiles(files) {
+  for (var i = 0; i < files.length; i++) {
+    document.getElementById('fileDragName').value = files[i].name
+
+    reader = new FileReader();
+    reader.readAsDataURL(files[i]);
+  }
+}
+var holder = document.getElementById('holder');
+holder.ondragover = function () { this.className = 'hover'; return false; };
+holder.ondragend = function () { this.className = ''; return false; };
+holder.ondrop = function (e) {
+  this.className = '';
+  e.preventDefault();
+  readfiles(e.dataTransfer.files);
+}
+</script>
+
+</body>
+
+</html>
