@@ -1,0 +1,38 @@
+
+<a href='https://jsfiddle.net/5mryvpc6/'>
+link referensi
+</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+
+
+	<p>Receive 20% discount on registration fees using the code: <strong><span id="discountCode">FKR2455EMSPN</span></strong></p>
+
+	<p>
+To register, you will be taken to the
+SuperReturn website.
+</p>
+<p>
+Click <button id="copyBtn">here </button> to copy our VIP code to your clipboard
+</p>
+<p>
+Click <a href='#'>
+here</a> to now be taken to the SuperReturn registration page.
+</p>
+
+<script>
+$(document).ready(function(){
+$('#copyBtn').click(function(){
+
+    var text = $("#discountCode").get(0)
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(text);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    //add to clipboard.
+    document.execCommand('copy');
+})
+
+});
+
+</script>
