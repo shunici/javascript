@@ -1,18 +1,21 @@
 //cara 1
 //dengan variabel biasa
 
-var nama = 'shun';
+  var nama = 'shun';
 var alamat = 'desa 6 takuti';
 var nilai = [2, 5, 4, 3 , 7];
 
 //hitung nilai rata-rata
-function nilai_rata(nilai) {
+function nilai_rata(angka) {
     var total = 0;
-    for (var i = 0; i< nilai.length; i++){
-        total += nilai[i];
+    for (var i = 0; i< angka.length; i++){
+        total += angka[i];
     }
-    return total/nilai.length;
+    return total/angka.length;
 }
+
+var tes = nilai_rata(nilai);
+alert(tes);
 
 ////////////////////////
 
