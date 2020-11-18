@@ -37,6 +37,8 @@
             return diri;
         }
         var hanupi = pribadi('mulia', 'kuning');
+        alert(hanupi.sifat);
+               
 
         //menggunakan this atau contructor
         function karakter(kulit, rambut, status) {
@@ -44,7 +46,8 @@
                 this.rambut = rambut,
                 this.status = status
         }
-        var mada = new karakter('putih', 'lurus panjang', 'sudah punya pacar');
+        var sifulan = new karakter('putih', 'lurus panjang', 'sudah punya pacar');
+        alert(sifulan.status);
 
 
 //menggunakan constructor pada penggunaan nya tidak memerlukan return seperti function declaration karena sudah dibuatkan sama javascriptnya
