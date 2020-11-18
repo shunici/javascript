@@ -32,7 +32,6 @@
 //     return mhs;
 // }
 
-// //cara pakai di console ketik shuni atau shuni.makan(2)
 // var shuni = Mahasiswa('shuni', 5);
 // var nopi  = Mahasiswa('nopi', 2);
 
