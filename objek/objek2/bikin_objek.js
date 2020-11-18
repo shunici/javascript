@@ -20,22 +20,25 @@
 //cara 2
 //objek function declaration
 
-// function Mahasiswa (nama, energi){
-//     let mhs = {};
-//     mhs.nama = nama;
-//     mhs.energi = energi;
-//     mhs.makan = function (nasi){
-//         this.energi += nasi;
-//         // ini sama dengan  this.energi = this.energi + nasi;
-//         console.log(`${this.nama} sudah makan`);
-//     }
-//     return mhs;
-// }
+function Mahasiswa (nama, energi){
+    let mhs = {};
+    mhs.nama = nama;
+    mhs.energi = energi;
+    mhs.makan = function (nasi){
+        this.energi += nasi;
+        // ini sama dengan  this.energi = this.energi + nasi;
+        console.log(`${this.nama} sudah makan`);
+    }
+    return mhs;
+}
+// cara pakai
+var tampil = Mahasiswa('shuni', 5);
 
-// var shuni = Mahasiswa('shuni', 5);
-// var nopi  = Mahasiswa('nopi', 2);
+alert (tampil.nama); //tampil shuni
 
 //cara 3 function contructor, bedanya tanpa return dan inisiasi awal variabel , dan juga ada keyword new
+
+
 function Mahasiswa (nama, energi){
  
     this.nama = nama;
@@ -48,6 +51,11 @@ function Mahasiswa (nama, energi){
    
 }
 //cara pakai
-var shuni = new Mahasiswa('shuni', 5);
-var nopi  = new Mahasiswa('nopi', 2);
+var mhs1 = new Mahasiswa('shuni', 5);
+var mhs2  = new Mahasiswa('nopi', 2);
+
+// bermain dengan console.log ketik
+// mhs1.nama = "ronaldo" maka mhs1 sekarang bernanama ronaldo, berlaku dengan sintax sebelumnya juga
+
+
 
